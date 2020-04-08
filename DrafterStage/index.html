@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Draft Stage</title>
+    <script id="data">
+        DrafterData = [
+  {
+    "protocols" : [
+
+    ],
+    "type" : "class",
+    "accessControl" : "public",
+    "super" : "NSObject",
+    "name" : "WBBladesSymTabCommand",
+    "id" : "D41F35C03550ACB4D2BDDDE9DF52ADC53",
+    "methods" : {
+
+    },
+    "isSwift" : false
+  },
+  {
+    "isSwift" : false,
+    "protocols" : [
+
+    ],
+    "methods" : {
+
+    },
+    "id" : "D6ACBEACE1D7A3DD2B3B9A90472886212",
+    "name" : "WBBladesStringTab",
+    "accessControl" : "public",
+    "super" : "NSObject",
+    "type" : "class"
+  },
+  {
+    "isSwift" : false,
+    "methods" : {
+      "DA004BAD9DC1D9AFEE45DC5ABDBBAE241" : {
+        "type" : "method",
+        "classId" : "D1F3E41F5223913E177D5EDBA1401FF61",
+        "static" : true,
+        "id" : "DA004BAD9DC1D9AFEE45DC5ABDBBAE241",
+        "isSwift" : false,
+        "accessControl" : "public",
+        "invokes" : [
+          {
+            "formatedName" : "[NSMutableArray array]"
+          },
+          {
+            "formatedName" : "[fileData getBytes: range:]"
+          },
+          {
+            "methodId" : "D69CBC77851071A6328F9B445FCB0F6D5",
+            "classId" : "D1F3E41F5223913E177D5EDBA1401FF61"
+          },
+          {
+            "formatedName" : "[strings addObject:]"
+          },
+          {
+            "formatedName" : "[str length]"
+          },
+          {
+            "formatedName" : "[strings copy]"
+          }
+        ],
+        "returnType" : "NSArray *",
+        "params" : [
+          {
+            "type" : "NSRange",
+            "sel" : "readStrings",
+            "name" : "range"
+          },
+          {
+            "sel" : "fixlen",
+            "name" : "len",
+            "type" : "NSUInteger"
+          },
+          {
+            "type" : "NSData *",
+            "sel" : "fromFile",
+            "name" : "fileData"
+          }
+        ]
+      },
+      "D62E6EB13C86604183973615568F37A45" : {
+        "classId" : "D1F3E41F5223913E177D5EDBA1401FF61",
+        "returnType" : "NSString *",
+        "invokes" : [
+          {
+            "formatedName" : "[fileData getBytes: range:]"
+          },
+          {
+            "classId" : "D1F3E41F5223913E177D5EDBA1401FF61",
+            "methodId" : "D69CBC77851071A6328F9B445FCB0F6D5"
+          }
+        ],
+        "accessControl" : "public",
+        "id" : "D62E6EB13C86604183973615568F37A45",
+        "static" : true,
+        "isSwift" : false,
+        "params" : [
+          {
+            "name" : "range",
+            "type" : "NSRange",
+            "sel" : "readString"
+          },
+          {
+            "type" : "NSUInteger",
+            "sel" : "fixlen",
+            "name" : "len"
+          },
+          {
+            "sel" : "fromFile",
+            "type" : "NSData *",
+            "name" : "fileData"
+          }
+        ],
+        "type" : "method"
+      },
+      "D69CBC77851071A6328F9B445FCB0F6D5" : {
+        "invokes" : [
+          {
+            "formatedName" : "[orig length]"
+          },
+          {
+            "formatedName" : "[[NSMutableString alloc] init]"
+          },
+          {
+            "formatedName" : "[orig methodForSelector:]"
+          },
+          {
+            "formatedName" : "[str appendFormat:]"
+          },
+          {
+            "formatedName" : "[str appendString:]"
+          }
+        ],
+        "returnType" : "NSString *",
+        "accessControl" : "public",
+        "type" : "method",
+        "params" : [
+          {
+            "name" : "orig",
+            "type" : "NSString *",
+            "sel" : "replaceEscapeCharsInString"
+          }
+        ],
+        "id" : "D69CBC77851071A6328F9B445FCB0F6D5",
+        "isSwift" : false,
+        "static" : true,
+        "classId" : "D1F3E41F5223913E177D5EDBA1401FF61"
+      },
+      "D98683B6EFF1DEE4AFE97829F19B08852" : {
+        "static" : true,
+        "accessControl" : "public",
+        "id" : "D98683B6EFF1DEE4AFE97829F19B08852",
+        "isSwift" : false,
+        "type" : "method",
+        "returnType" : "cs_insn *",
+        "classId" : "D1F3E41F5223913E177D5EDBA1401FF61",
+        "params" : [
+          {
+            "name" : "fileData",
+            "sel" : "disassemWithMachOFile",
+            "type" : "NSData *"
+          },
+          {
+            "type" : "unsigned long long",
+            "sel" : "from",
+            "name" : "begin"
+          },
+          {
+            "type" : "unsigned long long",
+            "sel" : "length",
+            "name" : "size"
+          }
+        ],
+        "invokes" : [
+          {
+            "formatedName" : "[fileData bytes]"
+          }
+        ]
+      },
+      "D8DDE3894C314521381B92C228CA44A97" : {
+        "id" : "D8DDE3894C314521381B92C228CA44A97",
+        "params" : [
+          {
+            "name" : "range",
+            "type" : "NSRange",
+            "sel" : "readBytes"
+          },
+          {
+            "name" : "length",
+            "sel" : "length",
+            "type" : "NSUInteger"
+          },
+          {
+            "sel" : "fromFile",
+            "name" : "fileData",
+            "type" : "NSData *"
+          }
+        ],
+        "type" : "method",
+        "isSwift" : false,
+        "invokes" : [
+          {
+            "formatedName" : "[fileData getBytes: range:]"
+          },
+          {
+            "formatedName" : "[NSData dataWithBytes: length:]"
+          }
+        ],
+        "static" : true,
+        "returnType" : "NSData *",
+        "classId" : "D1F3E41F5223913E177D5EDBA1401FF61",
+        "accessControl" : "public"
+      }
+    },
+    "protocols" : [
+
+    ],
+    "accessControl" : "public",
+    "type" : "class",
+    "super" : "NSObject",
+    "name" : "WBBladesTool",
+    "id" : "D1F3E41F5223913E177D5EDBA1401FF61"
+  },
+  {
+    "protocols" : [
+
+    ],
+    "accessControl" : "public",
+    "isSwift" : false,
+    "super" : "NSObject",
+    "name" : "WBBladesObject",
+    "id" : "D87FA4F5BA092E02736F047ED6A1FC45C",
+    "methods" : {
+      "DFB9BD7B0E65C368EEFF4AC8D9A4D8C48" : {
+        "params" : [
+          {
+            "type" : "",
+            "sel" : "description",
+            "name" : ""
+          }
+        ],
+        "isSwift" : false,
+        "static" : false,
+        "accessControl" : "private",
+        "invokes" : [
+          {
+            "formatedName" : "[NSString stringWithFormat: nNAME:]"
+          },
+          {
+            "formatedName" : "[string stringByAppendingString:]"
+          },
+          {
+            "formatedName" : "[NSString stringWithFormat: SIZE:]"
+          },
+          {
+            "formatedName" : "[NSString stringWithFormat: RANGE:]"
+          },
+          {
+            "formatedName" : "[NSString stringWithFormat: SECTIONS:]"
+          }
+        ],
+        "type" : "method",
+        "classId" : "D87FA4F5BA092E02736F047ED6A1FC45C",
+        "returnType" : "NSString *",
+        "id" : "DFB9BD7B0E65C368EEFF4AC8D9A4D8C48"
+      }
+    },
+    "type" : "class"
+  },
+  {
+    "protocols" : [
+
+    ],
+    "super" : "NSObject",
+    "name" : "WBBladesSymbol",
+    "id" : "D5C2EB64C9BB4483A9F0007DA44FAC798",
+    "methods" : {
+
+    },
+    "accessControl" : "public",
+    "isSwift" : false,
+    "type" : "class"
+  },
+  {
+    "isSwift" : false,
+    "name" : "WBBladesObjectHeader",
+    "methods" : {
+
+    },
+    "super" : "NSObject",
+    "protocols" : [
+
+    ],
+    "type" : "class",
+    "accessControl" : "public",
+    "id" : "DEC7A402894EA231EDB6ECBD249BFA401"
+  },
+  {
+    "accessControl" : "public",
+    "type" : "class",
+    "isSwift" : false,
+    "name" : "WBBladesLinkManager",
+    "id" : "D75B27A3323CC4F24A61638010FDC66D1",
+    "super" : "NSObject",
+    "protocols" : [
+
+    ],
+    "methods" : {
+      "D1991E8DFD093977B7716482B18EC38B8" : {
+        "static" : false,
+        "id" : "D1991E8DFD093977B7716482B18EC38B8",
+        "accessControl" : "public",
+        "isSwift" : false,
+        "type" : "method",
+        "classId" : "D75B27A3323CC4F24A61638010FDC66D1",
+        "params" : [
+          {
+            "type" : "NSArray < WBBladesObject * > *",
+            "sel" : "linkWithObjects",
+            "name" : "objects"
+          }
+        ],
+        "invokes" : [
+          {
+            "formatedName" : "[NSMutableSet set]"
+          },
+          {
+            "formatedName" : "[key isEqualToString:]"
+          },
+          {
+            "formatedName" : "[set containsObject:]"
+          },
+          {
+            "formatedName" : "[value length]"
+          },
+          {
+            "formatedName" : "[set addObject:]"
+          }
+        ],
+        "returnType" : "unsigned long long"
+      },
+      "D7FB50F5538FCE696170A12E7ACA30CEC" : {
+        "returnType" : "void",
+        "isSwift" : false,
+        "id" : "D7FB50F5538FCE696170A12E7ACA30CEC",
+        "invokes" : [
+          {
+            "formatedName" : "[NSMutableDictionary dictionary]"
+          },
+          {
+            "formatedName" : "[NSMutableSet set]"
+          }
+        ],
+        "type" : "method",
+        "classId" : "D75B27A3323CC4F24A61638010FDC66D1",
+        "accessControl" : "public",
+        "params" : [
+          {
+            "type" : "",
+            "sel" : "clearLinker",
+            "name" : ""
+          }
+        ],
+        "static" : false
+      },
+      "DDCBF1172EF2DDFE23B770A0C6A742484" : {
+        "id" : "DDCBF1172EF2DDFE23B770A0C6A742484",
+        "isSwift" : false,
+        "classId" : "D75B27A3323CC4F24A61638010FDC66D1",
+        "accessControl" : "public",
+        "params" : [
+          {
+            "type" : "",
+            "name" : "",
+            "sel" : "shareInstance"
+          }
+        ],
+        "type" : "method",
+        "invokes" : [
+          {
+            "formatedName" : "[[WBBladesLinkManager alloc] init]"
+          },
+          {
+            "formatedName" : "[NSMutableDictionary dictionary]"
+          },
+          {
+            "formatedName" : "[NSMutableSet set]"
+          }
+        ],
+        "returnType" : "WBBladesLinkManager *",
+        "static" : true
+      }
+    }
+  },
+  {
+    "name" : "WBBladesScanManager",
+    "protocols" : [
+
+    ],
+    "type" : "class",
+    "isSwift" : false,
+    "super" : "NSObject",
+    "id" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+    "methods" : {
+      "D3C6A82A2EA81FB82488BC8FDC6412722" : {
+        "type" : "method",
+        "params" : [
+          {
+            "sel" : "scanFuncBinaryCode",
+            "name" : "target",
+            "type" : "unsigned long long"
+          },
+          {
+            "name" : "begin",
+            "sel" : "begin",
+            "type" : "unsigned long long"
+          },
+          {
+            "type" : "unsigned long long",
+            "sel" : "vm",
+            "name" : "vm"
+          },
+          {
+            "sel" : "fileData",
+            "name" : "fileData",
+            "type" : "NSData *"
+          }
+        ],
+        "static" : true,
+        "accessControl" : "private",
+        "id" : "D3C6A82A2EA81FB82488BC8FDC6412722",
+        "returnType" : "BOOL",
+        "invokes" : [
+          {
+            "formatedName" : "[fileData getBytes: range:]"
+          }
+        ],
+        "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+        "isSwift" : false
+      },
+      "DB0DD23C65AC9BB2821A1089347A9E876" : {
+        "invokes" : [
+          {
+            "formatedName" : "[fileData getBytes: range:]"
+          },
+          {
+            "formatedName" : "[[WBBladesSymTabCommand alloc] init]"
+          }
+        ],
+        "returnType" : "WBBladesSymTabCommand *",
+        "isSwift" : false,
+        "static" : true,
+        "accessControl" : "private",
+        "params" : [
+          {
+            "type" : "NSData *",
+            "sel" : "symbolTabOffsetWithMachO",
+            "name" : "fileData"
+          }
+        ],
+        "id" : "DB0DD23C65AC9BB2821A1089347A9E876",
+        "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+        "type" : "method"
+      },
+      "DD439B43BB1B2F557963D834A8399EEC1" : {
+        "invokes" : [
+          {
+            "formatedName" : "[WBBladesTool readBytes: length: fromFile:]"
+          },
+          {
+            "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+            "methodId" : "D26A5BC88F6EF7323C8FF12C2D5E708D5"
+          }
+        ],
+        "static" : true,
+        "returnType" : "WBBladesObjectHeader *",
+        "params" : [
+          {
+            "sel" : "scanObjectHeader",
+            "type" : "NSData *",
+            "name" : "fileData"
+          },
+          {
+            "type" : "NSRange",
+            "sel" : "range",
+            "name" : "range"
+          }
+        ],
+        "id" : "DD439B43BB1B2F557963D834A8399EEC1",
+        "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+        "isSwift" : false,
+        "type" : "method",
+        "accessControl" : "private"
+      },
+      "D4802BCF0E539DDF738E4532D39646D7E" : {
+        "invokes" : [
+          {
+            "formatedName" : "[fileData length]"
+          },
+          {
+            "formatedName" : "[WBBladesTool readBytes: length: fromFile:]"
+          },
+          {
+            "formatedName" : "[data getBytes: range:]"
+          },
+          {
+            "formatedName" : "[classrefSet addObject:]"
+          }
+        ],
+        "id" : "D4802BCF0E539DDF738E4532D39646D7E",
+        "static" : true,
+        "isSwift" : false,
+        "type" : "method",
+        "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+        "returnType" : "void",
+        "params" : [
+          {
+            "type" : "section_64",
+            "sel" : "readCStringList",
+            "name" : "cfstringList"
+          },
+          {
+            "sel" : "set",
+            "type" : "NSMutableSet *",
+            "name" : "classrefSet"
+          },
+          {
+            "type" : "NSData *",
+            "name" : "fileData",
+            "sel" : "fileData"
+          }
+        ],
+        "accessControl" : "private"
+      },
+      "D95BD1F14CDBD8CECF78B91BE183E06ED" : {
+        "type" : "method",
+        "id" : "D95BD1F14CDBD8CECF78B91BE183E06ED",
+        "returnType" : "NSSet *",
+        "invokes" : [
+          {
+            "methodId" : "DAA337CA5F35E093099E7CD1F6FFCEF5F",
+            "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21"
+          },
+          {
+            "formatedName" : "[NSMutableSet set]"
+          },
+          {
+            "methodId" : "D26A5BC88F6EF7323C8FF12C2D5E708D5",
+            "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21"
+          },
+          {
+            "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+            "methodId" : "D6FAD8251949B5F2A31F63AC8A1881B12"
+          },
+          {
+            "methodId" : "DDFDC80544A929F1BD52EE40D4E0F0D05",
+            "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21"
+          },
+          {
+            "formatedName" : "[symbol hasPrefix:]"
+          },
+          {
+            "formatedName" : "[symbol stringByReplacingOccurrencesOfString: withString:]"
+          },
+          {
+            "formatedName" : "[set addObject:]"
+          },
+          {
+            "formatedName" : "[set copy]"
+          }
+        ],
+        "static" : true,
+        "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+        "isSwift" : false,
+        "accessControl" : "public",
+        "params" : [
+          {
+            "sel" : "dumpClassList",
+            "type" : "NSData *",
+            "name" : "fileData"
+          }
+        ]
+      },
+      "D0D881B2751E82DC02D6AAB46B0D303F1" : {
+        "accessControl" : "private",
+        "type" : "method",
+        "static" : true,
+        "invokes" : [
+          {
+            "formatedName" : "[fileData length]"
+          },
+          {
+            "formatedName" : "[WBBladesTool readBytes: length: fromFile:]"
+          },
+          {
+            "formatedName" : "[data getBytes: range:]"
+          },
+          {
+            "formatedName" : "[data getBytes: length:]"
+          },
+          {
+            "formatedName" : "[WBBladesHelper new]"
+          },
+          {
+            "formatedName" : "[aimClasses count]"
+          },
+          {
+            "formatedName" : "[aimClasses containsObject:]"
+          },
+          {
+            "methodId" : "D281E6BB4EB9EA72652B530BC3B77828D",
+            "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21"
+          },
+          {
+            "formatedName" : "[classrefSet addObject:]"
+          }
+        ],
+        "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+        "returnType" : "void",
+        "id" : "D0D881B2751E82DC02D6AAB46B0D303F1",
+        "params" : [
+          {
+            "type" : "section_64",
+            "sel" : "readClsRefList",
+            "name" : "classrefList"
+          },
+          {
+            "type" : "NSSet *",
+            "sel" : "aimClasses",
+            "name" : "aimClasses"
+          },
+          {
+            "type" : "NSMutableSet *",
+            "sel" : "set",
+            "name" : "classrefSet"
+          },
+          {
+            "type" : "NSData *",
+            "sel" : "fileData",
+            "name" : "fileData"
+          }
+        ],
+        "isSwift" : false
+      },
+      "D4420B52F28BDD7A30BA38271E54902B9" : {
+        "id" : "D4420B52F28BDD7A30BA38271E54902B9",
+        "params" : [
+          {
+            "name" : "targetStr",
+            "type" : "char *",
+            "sel" : "scanSELCallerWithAddress"
+          },
+          {
+            "name" : "targetHighStr",
+            "type" : "char *",
+            "sel" : "heigh"
+          },
+          {
+            "sel" : "low",
+            "name" : "targetLowStr",
+            "type" : "char *"
+          },
+          {
+            "type" : "unsigned long long",
+            "sel" : "begin",
+            "name" : "begin"
+          },
+          {
+            "type" : "unsigned long long",
+            "sel" : "vm",
+            "name" : "vm"
+          }
+        ],
+        "type" : "method",
+        "returnType" : "BOOL",
+        "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+        "isSwift" : false,
+        "invokes" : [
+
+        ],
+        "static" : true,
+        "accessControl" : "private"
+      },
+      "D867E8E51E54D58F90409A205BE4D9CD3" : {
+        "accessControl" : "public",
+        "type" : "method",
+        "returnType" : "unsigned long long",
+        "isSwift" : false,
+        "params" : [
+          {
+            "sel" : "scanStaticLibrary",
+            "type" : "NSData *",
+            "name" : "fileData"
+          }
+        ],
+        "static" : true,
+        "id" : "D867E8E51E54D58F90409A205BE4D9CD3",
+        "invokes" : [
+          {
+            "formatedName" : "[fileData length]"
+          },
+          {
+            "methodId" : "DAA337CA5F35E093099E7CD1F6FFCEF5F",
+            "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21"
+          },
+          {
+            "formatedName" : "[NSMutableArray array]"
+          },
+          {
+            "formatedName" : "[fileData bytes]"
+          },
+          {
+            "formatedName" : "[WBBladesObject new]"
+          },
+          {
+            "methodId" : "D3C368D69E38CC6FF5FC3AA687F2AD142",
+            "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21"
+          },
+          {
+            "formatedName" : "[objects addObject:]"
+          },
+          {
+            "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+            "methodId" : "D26A5BC88F6EF7323C8FF12C2D5E708D5"
+          },
+          {
+            "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+            "methodId" : "D6FAD8251949B5F2A31F63AC8A1881B12"
+          },
+          {
+            "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+            "methodId" : "DDFDC80544A929F1BD52EE40D4E0F0D05"
+          },
+          {
+            "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+            "methodId" : "D75C0A6850BED810E21595316CF3500A8"
+          },
+          {
+            "methodId" : "D8C9194724E87D096B76CD35C29F376EB",
+            "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21"
+          },
+          {
+            "formatedName" : "[[WBBladesLinkManager shareInstance] linkWithObjects:]"
+          }
+        ],
+        "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21"
+      },
+      "D26A5BC88F6EF7323C8FF12C2D5E708D5" : {
+        "type" : "method",
+        "accessControl" : "public",
+        "params" : [
+          {
+            "sel" : "scanSymtabHeader",
+            "type" : "NSData *",
+            "name" : "fileData"
+          },
+          {
+            "sel" : "range",
+            "name" : "range",
+            "type" : "NSRange"
+          }
+        ],
+        "invokes" : [
+          {
+            "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+            "methodId" : "D8C9194724E87D096B76CD35C29F376EB"
+          },
+          {
+            "formatedName" : "[[WBBladesObjectHeader alloc] init]"
+          },
+          {
+            "formatedName" : "[WBBladesTool readString: fixlen: fromFile:]"
+          },
+          {
+            "formatedName" : "[[NSMutableString alloc] initWithCapacity:]"
+          },
+          {
+            "formatedName" : "[padding appendString:]"
+          },
+          {
+            "formatedName" : "[padding length]"
+          }
+        ],
+        "returnType" : "WBBladesObjectHeader *",
+        "id" : "D26A5BC88F6EF7323C8FF12C2D5E708D5",
+        "static" : true,
+        "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+        "isSwift" : false
+      },
+      "DAA337CA5F35E093099E7CD1F6FFCEF5F" : {
+        "static" : true,
+        "invokes" : [
+          {
+            "formatedName" : "[fileData bytes]"
+          }
+        ],
+        "accessControl" : "public",
+        "isSwift" : false,
+        "returnType" : "BOOL",
+        "type" : "method",
+        "id" : "DAA337CA5F35E093099E7CD1F6FFCEF5F",
+        "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+        "params" : [
+          {
+            "type" : "NSData *",
+            "sel" : "isSupport",
+            "name" : "fileData"
+          }
+        ]
+      },
+      "D8C9194724E87D096B76CD35C29F376EB" : {
+        "type" : "method",
+        "params" : [
+          {
+            "name" : "range",
+            "type" : "NSRange",
+            "sel" : "rangeAlign"
+          }
+        ],
+        "static" : true,
+        "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+        "invokes" : [
+
+        ],
+        "accessControl" : "public",
+        "isSwift" : false,
+        "returnType" : "NSRange",
+        "id" : "D8C9194724E87D096B76CD35C29F376EB"
+      },
+      "D3C368D69E38CC6FF5FC3AA687F2AD142" : {
+        "params" : [
+          {
+            "name" : "fileData",
+            "type" : "NSData *",
+            "sel" : "scanObjectMachO"
+          },
+          {
+            "sel" : "range",
+            "name" : "range",
+            "type" : "NSRange"
+          }
+        ],
+        "id" : "D3C368D69E38CC6FF5FC3AA687F2AD142",
+        "returnType" : "WBBladesObjectMachO *",
+        "invokes" : [
+          {
+            "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+            "methodId" : "D8C9194724E87D096B76CD35C29F376EB"
+          },
+          {
+            "formatedName" : "[WBBladesObjectMachO new]"
+          },
+          {
+            "formatedName" : "[NSMutableDictionary dictionary]"
+          },
+          {
+            "formatedName" : "[fileData getBytes: range:]"
+          },
+          {
+            "formatedName" : "[[NSString alloc] initWithUTF8String:]"
+          },
+          {
+            "formatedName" : "[segName isEqualToString:]"
+          },
+          {
+            "formatedName" : "[NSString stringWithFormat:]"
+          },
+          {
+            "formatedName" : "[WBBladesTool readStrings: fixlen: fromFile:]"
+          },
+          {
+            "formatedName" : "[NSMutableArray array]"
+          },
+          {
+            "formatedName" : "[WBBladesTool readBytes: length: fromFile:]"
+          },
+          {
+            "formatedName" : "[array addObject:]"
+          },
+          {
+            "formatedName" : "[array copy]"
+          },
+          {
+            "formatedName" : "[data bytes]"
+          },
+          {
+            "formatedName" : "[NSData dataWithBytes: length:]"
+          },
+          {
+            "formatedName" : "[[NSString alloc] initWithData: encoding:]"
+          }
+        ],
+        "isSwift" : false,
+        "accessControl" : "private",
+        "type" : "method",
+        "static" : true,
+        "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21"
+      },
+      "DD024D418C472CE4F2276788F597992F6" : {
+        "id" : "DD024D418C472CE4F2276788F597992F6",
+        "accessControl" : "private",
+        "returnType" : "NSDictionary *",
+        "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+        "static" : true,
+        "invokes" : [
+          {
+            "formatedName" : "[fileData length]"
+          },
+          {
+            "formatedName" : "[WBBladesTool readBytes: length: fromFile:]"
+          },
+          {
+            "formatedName" : "[data getBytes: range:]"
+          },
+          {
+            "formatedName" : "[data getBytes: length:]"
+          },
+          {
+            "formatedName" : "[crashAddresses componentsSeparatedByString:]"
+          },
+          {
+            "methodId" : "D713571C7E22BE7C805D29608B030B1DA",
+            "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21"
+          },
+          {
+            "formatedName" : "[crashSymbolRst addEntriesFromDictionary:]"
+          },
+          {
+            "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+            "methodId" : "D18E6B4D88C55C6F2CC8137226279B741"
+          }
+        ],
+        "params" : [
+          {
+            "sel" : "scanCrashSymbolResult",
+            "name" : "classList",
+            "type" : "section_64"
+          },
+          {
+            "name" : "fileData",
+            "type" : "NSData *",
+            "sel" : "fileData"
+          },
+          {
+            "name" : "crashAddresses",
+            "type" : "NSString *",
+            "sel" : "crashOffsets"
+          }
+        ],
+        "type" : "method",
+        "isSwift" : false
+      },
+      "DFCF4F46A04C8720E5C14B30B4636B840" : {
+        "accessControl" : "private",
+        "params" : [
+          {
+            "sel" : "readClassList",
+            "type" : "section_64",
+            "name" : "classList"
+          },
+          {
+            "sel" : "aimClasses",
+            "name" : "aimClasses",
+            "type" : "NSSet *"
+          },
+          {
+            "type" : "NSMutableSet *",
+            "sel" : "set",
+            "name" : "classrefSet"
+          },
+          {
+            "name" : "fileData",
+            "type" : "NSData *",
+            "sel" : "fileData"
+          }
+        ],
+        "isSwift" : false,
+        "static" : true,
+        "returnType" : "NSMutableSet *",
+        "id" : "DFCF4F46A04C8720E5C14B30B4636B840",
+        "invokes" : [
+          {
+            "formatedName" : "[NSMutableSet set]"
+          },
+          {
+            "formatedName" : "[fileData length]"
+          },
+          {
+            "formatedName" : "[WBBladesTool readBytes: length: fromFile:]"
+          },
+          {
+            "formatedName" : "[data getBytes: range:]"
+          },
+          {
+            "formatedName" : "[data getBytes: length:]"
+          },
+          {
+            "formatedName" : "[classrefSet addObject:]"
+          },
+          {
+            "formatedName" : "[aimClasses count]"
+          },
+          {
+            "formatedName" : "[aimClasses containsObject:]"
+          },
+          {
+            "formatedName" : "[typeName stringByReplacingOccurrencesOfString: withString:]"
+          }
+        ],
+        "type" : "method",
+        "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21"
+      },
+      "D557CD36476F6813935B3F49E48B59C3B" : {
+        "static" : true,
+        "accessControl" : "public",
+        "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+        "type" : "method",
+        "params" : [
+          {
+            "name" : "fileData",
+            "sel" : "symbolizeWithMachOFile",
+            "type" : "NSData *"
+          },
+          {
+            "sel" : "crashOffsets",
+            "type" : "NSString *",
+            "name" : "crashAddresses"
+          }
+        ],
+        "returnType" : "NSDictionary *",
+        "invokes" : [
+          {
+            "formatedName" : "[fileData getBytes: range:]"
+          },
+          {
+            "formatedName" : "[NSString stringWithFormat:]"
+          },
+          {
+            "formatedName" : "[segName isEqualToString:]"
+          },
+          {
+            "formatedName" : "[[NSString alloc] initWithUTF8String:]"
+          },
+          {
+            "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+            "methodId" : "DD024D418C472CE4F2276788F597992F6"
+          },
+          {
+            "formatedName" : "[NSJSONSerialization dataWithJSONObject: options: error:]"
+          },
+          {
+            "formatedName" : "[[NSString alloc] initWithData: encoding:]"
+          },
+          {
+            "formatedName" : "[resultsJson writeToFile: atomically: encoding: error:]"
+          }
+        ],
+        "isSwift" : false,
+        "id" : "D557CD36476F6813935B3F49E48B59C3B"
+      },
+      "D6FAD8251949B5F2A31F63AC8A1881B12" : {
+        "id" : "D6FAD8251949B5F2A31F63AC8A1881B12",
+        "accessControl" : "public",
+        "static" : true,
+        "returnType" : "WBBladesSymTab *",
+        "params" : [
+          {
+            "name" : "fileData",
+            "type" : "NSData *",
+            "sel" : "scanSymbolTab"
+          },
+          {
+            "name" : "range",
+            "type" : "NSRange",
+            "sel" : "range"
+          }
+        ],
+        "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+        "type" : "method",
+        "isSwift" : false,
+        "invokes" : [
+          {
+            "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+            "methodId" : "D8C9194724E87D096B76CD35C29F376EB"
+          },
+          {
+            "formatedName" : "[WBBladesSymTab new]"
+          },
+          {
+            "formatedName" : "[WBBladesTool readBytes: length: fromFile:]"
+          },
+          {
+            "formatedName" : "[data getBytes: range:]"
+          },
+          {
+            "formatedName" : "[NSMutableArray array]"
+          },
+          {
+            "formatedName" : "[symbols addObject:]"
+          },
+          {
+            "formatedName" : "[symbols copy]"
+          }
+        ]
+      },
+      "DDFDC80544A929F1BD52EE40D4E0F0D05" : {
+        "accessControl" : "public",
+        "type" : "method",
+        "returnType" : "WBBladesStringTab *",
+        "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+        "invokes" : [
+          {
+            "formatedName" : "[WBBladesStringTab new]"
+          },
+          {
+            "formatedName" : "[WBBladesTool readBytes: length: fromFile:]"
+          },
+          {
+            "formatedName" : "[data getBytes: range:]"
+          },
+          {
+            "formatedName" : "[WBBladesTool readStrings: fixlen: fromFile:]"
+          }
+        ],
+        "id" : "DDFDC80544A929F1BD52EE40D4E0F0D05",
+        "static" : true,
+        "params" : [
+          {
+            "sel" : "scanStringTab",
+            "type" : "NSData *",
+            "name" : "fileData"
+          },
+          {
+            "type" : "NSRange",
+            "sel" : "range",
+            "name" : "range"
+          }
+        ],
+        "isSwift" : false
+      },
+      "D75C0A6850BED810E21595316CF3500A8" : {
+        "isSwift" : false,
+        "static" : true,
+        "accessControl" : "public",
+        "params" : [
+          {
+            "type" : "NSData *",
+            "sel" : "scanObject",
+            "name" : "fileData"
+          },
+          {
+            "sel" : "range",
+            "name" : "range",
+            "type" : "NSRange"
+          }
+        ],
+        "returnType" : "WBBladesObject *",
+        "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+        "invokes" : [
+          {
+            "methodId" : "D8C9194724E87D096B76CD35C29F376EB",
+            "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21"
+          },
+          {
+            "formatedName" : "[WBBladesObject new]"
+          },
+          {
+            "methodId" : "DD439B43BB1B2F557963D834A8399EEC1",
+            "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21"
+          },
+          {
+            "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+            "methodId" : "D3C368D69E38CC6FF5FC3AA687F2AD142"
+          }
+        ],
+        "type" : "method",
+        "id" : "D75C0A6850BED810E21595316CF3500A8"
+      },
+      "D18E6B4D88C55C6F2CC8137226279B741" : {
+        "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+        "returnType" : "NSDictionary *",
+        "static" : true,
+        "accessControl" : "private",
+        "invokes" : [
+          {
+            "formatedName" : "[fileData length]"
+          },
+          {
+            "formatedName" : "[WBBladesTool readBytes: length: fromFile:]"
+          },
+          {
+            "formatedName" : "[data getBytes: length:]"
+          },
+          {
+            "formatedName" : "[NSMutableDictionary dictionary]"
+          },
+          {
+            "formatedName" : "[fileData getBytes: range:]"
+          },
+          {
+            "formatedName" : "[crashAddress enumerateObjectsUsingBlock:]"
+          },
+          {
+            "methodId" : "D3C6A82A2EA81FB82488BC8FDC6412722",
+            "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21"
+          },
+          {
+            "formatedName" : "[NSString stringWithFormat:]"
+          },
+          {
+            "formatedName" : "[crashSymbolRst setObject: forKey:]"
+          }
+        ],
+        "type" : "method",
+        "isSwift" : false,
+        "params" : [
+          {
+            "name" : "classMethodListOffset",
+            "type" : "unsigned long long",
+            "sel" : "scanClassMethodListResult"
+          },
+          {
+            "name" : "className",
+            "type" : "NSString *",
+            "sel" : "className"
+          },
+          {
+            "name" : "vm",
+            "sel" : "vm",
+            "type" : "unsigned long long"
+          },
+          {
+            "name" : "data",
+            "type" : "NSData *",
+            "sel" : "data"
+          },
+          {
+            "type" : "NSData *",
+            "sel" : "fileData",
+            "name" : "fileData"
+          },
+          {
+            "sel" : "crashAddress",
+            "name" : "crashAddress",
+            "type" : "NSArray *"
+          }
+        ],
+        "id" : "D18E6B4D88C55C6F2CC8137226279B741"
+      },
+      "D0F83CC01F3E601B35CAC9A58E864D639" : {
+        "invokes" : [
+          {
+            "formatedName" : "[fileData length]"
+          },
+          {
+            "formatedName" : "[WBBladesTool readBytes: length: fromFile:]"
+          },
+          {
+            "formatedName" : "[data getBytes: range:]"
+          },
+          {
+            "formatedName" : "[data getBytes: length:]"
+          },
+          {
+            "formatedName" : "[classrefSet addObject:]"
+          }
+        ],
+        "static" : true,
+        "returnType" : "void",
+        "id" : "D0F83CC01F3E601B35CAC9A58E864D639",
+        "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+        "params" : [
+          {
+            "name" : "nlclsList",
+            "type" : "section_64",
+            "sel" : "readNLClsList"
+          },
+          {
+            "type" : "NSMutableSet *",
+            "name" : "classrefSet",
+            "sel" : "set"
+          },
+          {
+            "sel" : "fileData",
+            "name" : "fileData",
+            "type" : "NSData *"
+          }
+        ],
+        "accessControl" : "private",
+        "isSwift" : false,
+        "type" : "method"
+      },
+      "D281E6BB4EB9EA72652B530BC3B77828D" : {
+        "accessControl" : "private",
+        "type" : "method",
+        "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+        "isSwift" : false,
+        "id" : "D281E6BB4EB9EA72652B530BC3B77828D",
+        "params" : [
+          {
+            "name" : "fileData",
+            "sel" : "scanSymbolTabWithFileData",
+            "type" : "NSData *"
+          },
+          {
+            "sel" : "helper",
+            "type" : "WBBladesHelper *",
+            "name" : "helper"
+          },
+          {
+            "type" : "unsigned long long",
+            "sel" : "vm",
+            "name" : "vm"
+          }
+        ],
+        "invokes" : [
+          {
+            "methodId" : "DB0DD23C65AC9BB2821A1089347A9E876",
+            "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21"
+          },
+          {
+            "formatedName" : "[[[NSString stringWithFormat:] lowercaseString] cStringUsingEncoding:]"
+          },
+          {
+            "methodId" : "D4420B52F28BDD7A30BA38271E54902B9",
+            "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21"
+          }
+        ],
+        "static" : true,
+        "returnType" : "BOOL"
+      },
+      "D713571C7E22BE7C805D29608B030B1DA" : {
+        "static" : true,
+        "isSwift" : false,
+        "type" : "method",
+        "accessControl" : "private",
+        "returnType" : "NSDictionary *",
+        "id" : "D713571C7E22BE7C805D29608B030B1DA",
+        "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+        "invokes" : [
+          {
+            "formatedName" : "[fileData length]"
+          },
+          {
+            "formatedName" : "[WBBladesTool readBytes: length: fromFile:]"
+          },
+          {
+            "formatedName" : "[data getBytes: length:]"
+          },
+          {
+            "formatedName" : "[NSMutableDictionary dictionary]"
+          },
+          {
+            "formatedName" : "[fileData getBytes: range:]"
+          },
+          {
+            "formatedName" : "[crashAddress enumerateObjectsUsingBlock:]"
+          },
+          {
+            "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+            "methodId" : "D3C6A82A2EA81FB82488BC8FDC6412722"
+          },
+          {
+            "formatedName" : "[NSString stringWithFormat:]"
+          },
+          {
+            "formatedName" : "[crashSymbolRst setObject: forKey:]"
+          }
+        ],
+        "params" : [
+          {
+            "type" : "unsigned long long",
+            "sel" : "scanMethodListResult",
+            "name" : "methodListOffset"
+          },
+          {
+            "sel" : "className",
+            "name" : "className",
+            "type" : "NSString *"
+          },
+          {
+            "name" : "vm",
+            "type" : "unsigned long long",
+            "sel" : "vm"
+          },
+          {
+            "name" : "data",
+            "type" : "NSData *",
+            "sel" : "data"
+          },
+          {
+            "sel" : "fileData",
+            "type" : "NSData *",
+            "name" : "fileData"
+          },
+          {
+            "name" : "crashAddress",
+            "sel" : "crashAddress",
+            "type" : "NSArray *"
+          }
+        ]
+      },
+      "DBD108C51CAF7BA69DCC4213644299DCF" : {
+        "isSwift" : false,
+        "returnType" : "NSSet *",
+        "type" : "method",
+        "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+        "params" : [
+          {
+            "type" : "NSData *",
+            "name" : "fileData",
+            "sel" : "scanAllClassWithFileData"
+          },
+          {
+            "sel" : "classes",
+            "name" : "aimClasses",
+            "type" : "NSSet *"
+          }
+        ],
+        "invokes" : [
+          {
+            "formatedName" : "[fileData getBytes: range:]"
+          },
+          {
+            "formatedName" : "[NSString stringWithFormat:]"
+          },
+          {
+            "formatedName" : "[segName isEqualToString:]"
+          },
+          {
+            "formatedName" : "[[NSString alloc] initWithUTF8String:]"
+          },
+          {
+            "formatedName" : "[WBBladesTool disassemWithMachOFile: from: length:]"
+          },
+          {
+            "formatedName" : "[NSMutableSet set]"
+          },
+          {
+            "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+            "methodId" : "D0F83CC01F3E601B35CAC9A58E864D639"
+          },
+          {
+            "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21",
+            "methodId" : "D0D881B2751E82DC02D6AAB46B0D303F1"
+          },
+          {
+            "methodId" : "D4802BCF0E539DDF738E4532D39646D7E",
+            "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21"
+          },
+          {
+            "methodId" : "DFCF4F46A04C8720E5C14B30B4636B840",
+            "classId" : "D6EFD22AD1A54E39546F3FF9BFCB56F21"
+          },
+          {
+            "formatedName" : "[classrefSet enumerateObjectsUsingBlock:]"
+          },
+          {
+            "formatedName" : "[classSet removeObject:]"
+          }
+        ],
+        "id" : "DBD108C51CAF7BA69DCC4213644299DCF",
+        "static" : true,
+        "accessControl" : "public"
+      }
+    },
+    "accessControl" : "public"
+  },
+  {
+    "name" : "WBBladesHelper",
+    "isSwift" : false,
+    "protocols" : [
+
+    ],
+    "methods" : {
+      "D772F5558D878AF04DA3C2F1850638132" : {
+        "id" : "D772F5558D878AF04DA3C2F1850638132",
+        "accessControl" : "private",
+        "returnType" : "NSString *",
+        "static" : false,
+        "classId" : "D1B9617620625C3120CF8D08440887D59",
+        "isSwift" : false,
+        "type" : "method",
+        "params" : [
+          {
+            "sel" : "description",
+            "name" : "",
+            "type" : ""
+          }
+        ],
+        "invokes" : [
+          {
+            "formatedName" : "[NSString stringWithFormat:]"
+          },
+          {
+            "formatedName" : "[string stringByAppendingString:]"
+          }
+        ]
+      }
+    },
+    "super" : "NSObject",
+    "type" : "class",
+    "id" : "D1B9617620625C3120CF8D08440887D59",
+    "accessControl" : "public"
+  },
+  {
+    "accessControl" : "public",
+    "protocols" : [
+
+    ],
+    "super" : "NSObject",
+    "methods" : {
+      "D10C04E52B0340A432EC6F10004F1DFAB" : {
+        "accessControl" : "public",
+        "type" : "method",
+        "id" : "D10C04E52B0340A432EC6F10004F1DFAB",
+        "invokes" : [
+          {
+            "formatedName" : "[filePath lastPathComponent]"
+          },
+          {
+            "formatedName" : "[lastPathComponent componentsSeparatedByString:]"
+          },
+          {
+            "formatedName" : "[tmp count]"
+          },
+          {
+            "formatedName" : "[tmp lastObject]"
+          },
+          {
+            "formatedName" : "[fileType isEqualToString:]"
+          },
+          {
+            "formatedName" : "[tmp firstObject]"
+          },
+          {
+            "formatedName" : "[filePath stringByAppendingPathComponent:]"
+          },
+          {
+            "formatedName" : "[NSURL fileURLWithPath:]"
+          },
+          {
+            "formatedName" : "[NSMutableData dataWithContentsOfURL: options: error:]"
+          },
+          {
+            "formatedName" : "[NSString stringWithFormat:]"
+          }
+        ],
+        "returnType" : "NSData *",
+        "classId" : "D6CF3FC9D2DE05A67F6321D4E1AD2B3C3",
+        "isSwift" : false,
+        "params" : [
+          {
+            "type" : "NSString *",
+            "sel" : "readArm64FromFile",
+            "name" : "filePath"
+          }
+        ],
+        "static" : true
+      },
+      "D915BC69824A02F3E7E5E7742F19EDA1C" : {
+        "static" : true,
+        "returnType" : "NSData *",
+        "id" : "D915BC69824A02F3E7E5E7742F19EDA1C",
+        "isSwift" : false,
+        "invokes" : [
+          {
+            "formatedName" : "[NSURL fileURLWithPath:]"
+          },
+          {
+            "formatedName" : "[NSMutableData dataWithContentsOfURL: options: error:]"
+          }
+        ],
+        "type" : "method",
+        "accessControl" : "public",
+        "params" : [
+          {
+            "sel" : "readFromFile",
+            "name" : "filePath",
+            "type" : "NSString *"
+          }
+        ],
+        "classId" : "D6CF3FC9D2DE05A67F6321D4E1AD2B3C3"
+      }
+    },
+    "id" : "D6CF3FC9D2DE05A67F6321D4E1AD2B3C3",
+    "type" : "class",
+    "name" : "WBBladesFileManager",
+    "isSwift" : false
+  },
+  {
+    "name" : "WBBladesSymTab",
+    "isSwift" : false,
+    "type" : "class",
+    "accessControl" : "public",
+    "methods" : {
+
+    },
+    "protocols" : [
+
+    ],
+    "id" : "D7C5BCADE646B58A3B0B99D957FD23041",
+    "super" : "NSObject"
+  },
+  {
+    "name" : "WBBladesObjectMachO",
+    "accessControl" : "public",
+    "methods" : {
+
+    },
+    "type" : "class",
+    "protocols" : [
+
+    ],
+    "id" : "D36B0E78AE8A4185505CBAAAF1FC8F5BD",
+    "isSwift" : false,
+    "super" : "NSObject"
+  }
+]
+    </script>
+</head>
+<body>
+    <div id="app">
+        
+    </div>
+<script type="text/javascript" src="bundle.js"></script></body>
+</html>
