@@ -58,6 +58,13 @@ void removeCopyFile(NSString *filePath) {
 /**
  actool(apple command line tool)    --filter-for-device-model iPhone7,2（Specify the device） --filter-for-device-os-version 13.0（Specify the system）  --target-device iphone --minimum-deployment-target 9（Specify the minimum version） --platform iphoneos（Specify operation system type）  --compile /Users/a58/Desktop/BottomDlib/BottomDlib/  /Users/a58/Desktop/BottomDlib/BottomDlib/YXUIBase.xcassets （Specify the path where the compiled files are located. If there are multiple paths, concatenate them with spaces.）
  */
+
+/**
+ * Compile xcassert resources.
+ * 使用 actool 编译成 Assets.car
+ * 原本actool会把所有的资源文件找到，然后“输出”到2个地方，car file和--compile指定的目录下（在xcassets中的资源输出到car file，零散的资源输出到app包里）。在mac OC 10.13和iOS 11.0之后的版本，icon会被拷贝到car file中（可能苹果希望这么做吧）
+ * 链接：https://www.jianshu.com/p/0fcf68e69564
+ */
 void compileXcassets(NSString *path) {
     NSString *complieCmd = [NSString stringWithFormat:@"actool   --compress-pngs --filter-for-device-model iPhone9,2 --filter-for-device-os-version 13.0  --target-device iphone --minimum-deployment-target 9 --platform iphoneos --compile %@ %@", [path stringByDeletingLastPathComponent],path];
     cmd(complieCmd);

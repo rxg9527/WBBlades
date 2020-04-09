@@ -15,9 +15,9 @@
 #import "WBBladesCMD.h"
 
 typedef NS_ENUM(NSInteger, WBBladesType) {
-    WBBladesTypeStaticLibSize    = 1,
-    WBBladesTypeUnusedClass      = 2,
-    WBBladesTypeCrashLog         = 3,
+    WBBladesTypeStaticLibSize    = 1, //静态库体积
+    WBBladesTypeUnusedClass      = 2, //无用类
+    WBBladesTypeCrashLog         = 3, //无符号崩溃解析
 };
 
 static BOOL isResource(NSString *type);
@@ -34,8 +34,13 @@ static void scanUnusedClass(int argc, const char * argv[]);
 static void scanCrashSymbol(int argc, const char * argv[]);
 static NSString *resultFilePath(void);
 
+/// 命令行参数是使用 main() 函数参数来处理的
+/// @param argc 指传入参数的个数。如果没有提供任何参数，argc 将为 1，否则，如果传递了一个参数，argc 将被设置为 2。
+/// @param argv 一个指针数组，指向传递给程序的每个参数。argv[0] 存储程序的名称，argv[1] 是一个指向第一个命令行参数的指针，*argv[n] 是最后一个参数。
+/// https://www.runoob.com/cprogramming/c-command-line-arguments.html
 int main(int argc, const char *argv[]) {
     @autoreleasepool {
+        //argv[1]为接受到的数字参数，亦即WBBladesType
         NSInteger type = [[NSString stringWithFormat:@"%s",argv[1]] integerValue];
         if (type == WBBladesTypeStaticLibSize) {
             //1 + static lib path
@@ -55,6 +60,7 @@ int main(int argc, const char *argv[]) {
 #pragma mark Scan Function
 static void scanStaticLibrary(int argc, const char * argv[]) {
     
+    //枚举计算每个库的 resourceSize 和 resourceSize+codeSize，写入 `~/Desktop/WBBladesResult.plist`
     //param1:type  params2:libs' path list
     for (int i = 0; i < argc - 2; i++) {
         @autoreleasepool {
@@ -63,6 +69,7 @@ static void scanStaticLibrary(int argc, const char * argv[]) {
             
             NSString *podName = [podPath lastPathComponent];//pod's name
             
+            //~/Desktop/WBBladesResult.plist
             NSString *outPutPath = resultFilePath();//result output path
             outPutPath = [outPutPath stringByAppendingPathComponent:@"WBBladesResult.plist"];
             
@@ -73,6 +80,7 @@ static void scanStaticLibrary(int argc, const char * argv[]) {
             resourceSize = 0;//empty the resources' size
             codeSize = 0;//empty the codes' size
             
+            //核心方法
             enumAllFiles(podPath);//enumerate all pods' files
             
             //color prints each pod's resources' size and code's sizes
@@ -227,12 +235,23 @@ static void enumPodFiles(NSString *path) {
     }
 }
 
+/*
+ ipa解压后 **.app主要的成分如下：
+ Frameworks，动态库存放路径；
+ PlugIns，插件存放路径，如today extension；
+ Mach-O,可执行文件；
+ Assets.car，Asset Catalog编译产物；
+ react.bundle，内置的ReactNative业务；
+ bundle，主要存放资源文件；
+ 其他文件；
+ */
 static void enumAllFiles(NSString *path) {
     @autoreleasepool {
         //enumerate each pod
         NSFileManager * fileManger = [NSFileManager defaultManager];
         BOOL isDir = NO;
         BOOL isExist = [fileManger fileExistsAtPath:path isDirectory:&isDir];
+        //如果是软连接，转换成原始的文件路径
         NSString *symbolicLink = [fileManger destinationOfSymbolicLinkAtPath:path error:NULL];
         
         if (!isExist || symbolicLink) {//not exist or a symbolic link
@@ -242,6 +261,7 @@ static void enumAllFiles(NSString *path) {
         NSString *lastPathComponent = [path lastPathComponent];
         if (isDir) {////judge whether it is a path
             if ([lastPathComponent hasSuffix:@"xcassets"]) {////judge whether it is a resource
+                //使用 actool 编译成 Assets.car
                 compileXcassets(path);//compile xcassets
                     
                 //compile '.car' type files to calculate size
@@ -262,8 +282,6 @@ static void enumAllFiles(NSString *path) {
                 //enumerate current directory's files
                 for (NSString * str in dirArray) {
                     subPath  = [path stringByAppendingPathComponent:str];
-                    BOOL issubDir = NO;
-                    [fileManger fileExistsAtPath:subPath isDirectory:&issubDir];
                     enumAllFiles(subPath);
                 }
             }
@@ -276,6 +294,7 @@ static void enumAllFiles(NSString *path) {
                 NSData *fileData = [WBBladesFileManager  readFromFile:path];
                 resourceSize += [fileData length];
             }else if([array count] == 1 || [fileType isEqualToString:@"a"]){//static library
+                //[array count] == 1即判断成是静态库？
                 handleStaticLibrary(path);
             }else{//Probably it is a compiled intermediate files
             }
@@ -312,6 +331,7 @@ static BOOL isResource(NSString *type) {//resource type
 
 static NSString *resultFilePath() {
     //result file path
+    //用户桌面
     NSString *documentPath = [NSSearchPathForDirectoriesInDomains(NSDesktopDirectory,NSUserDomainMask, YES) objectAtIndex:0];
     return documentPath;
 }
